@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisibility Checker</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Divisibility Checker</h1>
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput">
+        <button onclick="checkDivisibility()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+
+  function checkDivisibility() {
+    var number = parseInt(document.getElementById("numberInput").value);
+    var resultElement = document.getElementById("result");
+  
+    resultElement.textContent = "";
+
+    // 3 - magic
+    if (number % 3 === 0) {
+        resultElement.textContent = resultElement.textContent + "magic ";
+    }
+    
+    // 4 - stability 
+    if (number % 4 === 0) { 
+        resultElement.textContent = resultElement.textContent + "stability "; 
+    } else if (number % 4 === 3) { 
+        resultElement.textContent = resultElement.textContent + "craftsmanship "; 
+    }
+
+    // 5 - power 
+    if (number % 5 === 0) { 
+        resultElement.textContent = resultElement.textContent + "power "; 
+    } else if (number % 5 === 3) { 
+        resultElement.textContent = resultElement.textContent + "opportunity "; 
+    } else if (number % 5 === 4) { 
+        resultElement.textContent = resultElement.textContent + "rule "; 
+    }
+
+    // 6 - truth
+    if (number % 6 === 0) { 
+        resultElement.textContent = resultElement.textContent + "truth(holy) "; 
+    } else if ( number % 6 === 3) { 
+        resultElement.textContent = resultElement.textContent + "miracle "; 
+    } else if (number % 6 === 5) { 
+        resultElement.textContent = resultElement.textContent + "deity "; 
+    }
+
+    // 7 - lies
+    if (number % 7 === 0) { 
+        resultElement.textContent = resultElement.textContent + "(fake or lies) "; 
+    } else if (number %7 === 3) { 
+        resultElement.textContent = resultElement.textContent + "cruelty "; 
+    } else if (number % 7 === 6) { 
+        resultElement.textContent = resultElement.textContent + "outer "; 
+    }
+  }
+    </script>
+
+</body>
+
+<style> 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 20px;
+}
+
+    
+</style>
+</html>
