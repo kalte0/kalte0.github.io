@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Divisibility Checker</h1>
-        <label for="numberInput">Enter a number:</label>
+        <label for="numberInput">Now with ignorance detection! Enter a number:</label>
         <input type="number" id="numberInput">
         <button onclick="checkDivisibility()">Check</button>
         <p id="result"></p>
@@ -25,7 +25,7 @@ document.getElementById("numberInput").addEventListener("keyup", function(event)
         checkDivisibility();
     }
 });
-        
+
   function checkDivisibility() {
     var number = parseInt(document.getElementById("numberInput").value);
     var resultElement = document.getElementById("result");
@@ -58,6 +58,8 @@ document.getElementById("numberInput").addEventListener("keyup", function(event)
         resultElement.textContent = resultElement.textContent + "truth(holy) "; 
     } else if ( number % 6 === 3) { 
         resultElement.textContent = resultElement.textContent + "miracle "; 
+    } else if ( number % 6 === 4) { 
+        resultElement.textContent = resultElement.textContent + "balance "; 
     } else if (number % 6 === 5) { 
         resultElement.textContent = resultElement.textContent + "deity "; 
     }
@@ -67,7 +69,9 @@ document.getElementById("numberInput").addEventListener("keyup", function(event)
         resultElement.textContent = resultElement.textContent + "(fake or lies) "; 
     } else if (number %7 === 3) { 
         resultElement.textContent = resultElement.textContent + "cruelty "; 
-    } else if (number % 7 === 6) { 
+    } else if (number % 7 === 4) { 
+        resultElement.textContent = resultElement.textContent + "ignorance "; 
+    else if (number % 7 === 6) { 
         resultElement.textContent = resultElement.textContent + "outer "; 
     }
   }
