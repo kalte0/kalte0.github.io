@@ -17,6 +17,15 @@
 
     <script>
 
+// Add event listener to input field
+document.getElementById("numberInput").addEventListener("keyup", function(event) {
+    // Check if the Enter key is pressed (key code 13)
+    if (event.keyCode === 13) {
+        // Call the function to check divisibility
+        checkDivisibility();
+    }
+});
+        
   function checkDivisibility() {
     var number = parseInt(document.getElementById("numberInput").value);
     var resultElement = document.getElementById("result");
